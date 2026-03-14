@@ -32,9 +32,9 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
-// Configure CORS for frontend origin (Using env variable if present, defaulting to localhost for local testing)
+// Configure CORS for frontend origin (permissive for Vercel demo)
 const corsOptions = {
-  origin: process.env.FRONTEND_URL || "http://localhost:3000",
+  origin: "*",
   optionsSuccessStatus: 200
 };
 app.use(cors(corsOptions));
